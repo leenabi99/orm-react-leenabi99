@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 계산기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <input type="text" style="width:210px; height:30px;" id="lyh99">
+        <ul style="margin:0px; padding:0px;">
+            <li><input class="button" type="button" value="=" style="width:210px; height:30px;" onclick="result()"></li></br>
+            <li><input class="button" type="button" value="1" onclick="operation(1)"></li>
+            <li><input class="button" type="button" value="2" onclick="operation(2)"></li>
+            <li><input class="button" type="button" value="3" onclick="operation(3)"></li>
+            <li><input class="button" type="button" value="+" onclick="operation('+')"></li></br>
+            <li><input class="button" type="button" value="4" onclick="operation(4)"></li>
+            <li><input class="button" type="button" value="5" onclick="operation(5)"></li>
+            <li><input class="button" type="button" value="6" onclick="operation(6)"></li>
+            <li><input class="button" type="button" value="-" onclick="operation('-')"></li></br>
+            <li><input class="button" type="button" value="7" onclick="operation(7)"></li>
+            <li><input class="button" type="button" value="8" onclick="operation(8)"></li>
+            <li><input class="button" type="button" value="9" onclick="operation(9)"></li>
+            <li><input class="button" type="button" value="*" onclick="operation('*')"></li></br>
+            <li><input class="button" type="button" value="0" onclick="operation(0)"></li>
+            <li><input class="button" type="button" value="00" onclick="operation('00')"></li>
+            <li><input class="button" type="button" value="c" onclick="reset()"></li>
+            <li><input class="button" type="button" value="/" onclick="operation('/')"></li>
+        </ul>
+    </div>
+
+    <script>
+        var input = "";
+
+        function reset() {
+            var objtext = document.getElementById("lyh99");
+            input = "";
+            objtext.value = 0;
+        }
+
+        function operation(i) {
+            var objtext = document.getElementById("lyh99");
+            input = input + i;
+            objtext.value = input;
+        }
+
+        function result() {
+            var objtext = document.getElementById("lyh99");
+            objtext.value = eval(input);
+        }
+    </script>
+</body>
+</html>
